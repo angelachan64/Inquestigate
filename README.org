@@ -1,4 +1,4 @@
-# Inquestigate
+* Inquestigate
 API Search Engine
 |    The Team    |
 |----------------|
