@@ -9,8 +9,9 @@
      src="//maxcdn.bootstrapcdn.com/bootsrap/3.3.5/js/bootstrap.min.js">
     </script>
     <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
-    <h1>Hello!</h1>
+    {% block contents %}{% endblock %}
   </body>
 </html>
