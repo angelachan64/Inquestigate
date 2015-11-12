@@ -7,6 +7,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    return render_template("home.html");
+
+@app.route('/debug/')
+def backfrip_debug():
     request = urllib2.Request("http://api.nytimes.com/svc/topstories/v1/technology.json?api-key=" + NYTIMES_TOP_STORIES)
     response = urllib2.urlopen(request)
     page = json.load(response)
@@ -15,4 +19,4 @@ def index():
 if __name__=="__main__":
     app.debug = True
     app.secret_key = "p0NZLhPzCbjSJxxo"
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8000)
