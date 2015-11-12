@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, url_for
+from apis import nytimes
 import urllib2, json
-
-NYTIMES_TOP_STORIES = "f8855388b9dccd77285db343bee18bd2:6:73424671"
 
 app = Flask(__name__)
 
@@ -11,10 +10,15 @@ def index():
 
 @app.route('/debug/')
 def backfrip_debug():
-    request = urllib2.Request("http://api.nytimes.com/svc/topstories/v1/technology.json?api-key=" + NYTIMES_TOP_STORIES)
-    response = urllib2.urlopen(request)
-    page = json.load(response)
-    return "<h1>" + str(page['results'][0]['title']) + "</h1><br><em>" + str(page['results'][0]['byline']) + "</em><br>" + str(page['results'][0]['abstract'])
+    data = nytimes.top_stories('technology')
+    output = "<head><style>div{background-color:#cccccc;padding:1em;margin:\
+1em;font-family:sans-serif;width:40%;display:inline-block;vertical-align:top;\
+}</style></head><body>"
+    for article in range(len(data)):
+        output += u"<div id=\"{0}\"><h2 style=\"float:right;color:#808080\">\
+<i>{0}</i></h2>{1}</div>".format(
+            article, nytimes.format_article(data[article]))
+    return output + "</body>"
 
 if __name__=="__main__":
     app.debug = True
