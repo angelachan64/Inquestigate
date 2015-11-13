@@ -8,3 +8,4 @@ A search engine for all your whims and fancies.
 -----
 ** What APIs did we use?
 - Tumblr API
+- New York Times API
