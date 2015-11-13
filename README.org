@@ -5,3 +5,6 @@ A search engine for all your whims and fancies.
 | Angela Chan    |
 | Amanda Chiu    |
 | Eric Stringham |
+-----
+** What APIs did we use?
+- Tumblr API
