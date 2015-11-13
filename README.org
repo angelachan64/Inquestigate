@@ -1,5 +1,5 @@
 * Inquestigate
-API Search Engine
+A search engine for all your whims and fancies.
 |    The Team    |
 |----------------|
 | Angela Chan    |
