@@ -8,8 +8,18 @@ app = Flask(__name__)
 def index():
     return render_template("home.html");
 
-@app.route('/debug/')
+@app.route('/debug/', methods=["GET"])
 def backfrip_debug():
+    search = request.args.get('search')
+    return render_template("debug.html", search=search)
+
+if __name__=="__main__":
+    app.debug = True
+    app.secret_key = "p0NZLhPzCbjSJxxo"
+    app.run(host='0.0.0.0', port=8000)
+
+
+"""
     data = nytimes.top_stories('technology')
     output = "<head><style>div{background-color:#cccccc;padding:1em;margin:\
 1em;font-family:sans-serif;width:40%;display:inline-block;vertical-align:top;\
@@ -19,8 +29,4 @@ def backfrip_debug():
 <i>{0}</i></h2>{1}</div>".format(
             article, nytimes.format_article(data[article]))
     return output + "</body>"
-
-if __name__=="__main__":
-    app.debug = True
-    app.secret_key = "p0NZLhPzCbjSJxxo"
-    app.run(host='0.0.0.0', port=8000)
+"""
