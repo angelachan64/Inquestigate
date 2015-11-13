@@ -7,7 +7,7 @@ def top_stories(section='home'):
     data = json.load(
         urllib2.urlopen(
             urllib2.Request(
-                "http://api.nytimes.com/svc/topstories/v1/{0}.json?api-key={1}".format(
+                "http://api.nytimes.com/svc/topstories/v1/{}.json?api-key={}".format(
                     section, NYTIMES_TOP_STORIES
                 ))))['results']
     return data

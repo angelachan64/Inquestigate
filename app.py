@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, session, redirect, url_for
-from apis import nytimes
+from apis import dictionary, nytimes
 import urllib2, json
 
 app = Flask(__name__)
+app.jinja_env.line_statement_prefix = '%'
 
 @app.route('/')
 def index():
@@ -11,7 +12,8 @@ def index():
 @app.route('/debug/', methods=["GET"])
 def backfrip_debug():
     search = request.args.get('search')
-    return render_template("debug.html", search=search)
+    defs = dictionary.query(search)
+    return render_template("debug.html", search=search, defs=defs)
 
 if __name__=="__main__":
     app.debug = True

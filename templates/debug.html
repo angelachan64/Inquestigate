@@ -15,7 +15,7 @@
         border-style: outset;
         background-color: rgb(240, 240, 240);
       }
-      h1 {
+      h1, h2, h3, h4, h5, h6 {
         line-height: 0;
       }
       .center {
@@ -28,9 +28,24 @@
       <h1>Debug Temporary Homepage</h1>
       <br><form action="" method="GET">
         <input type="search" name="search" placeholder="Search"
-          {% if search %}value="{{search}}"{% else %}autofocus{% endif %}>
+          {% if search %}value="{{ search }}"{% else %}autofocus{% endif %}>
         <input type="submit" value="Search">
       </form>
     </div>
+    % if defs
+    <div>
+      <h1>Definitions for '{{ defs['term'] }}'</h1>
+      % for def in defs['definitions']
+        <h3 style="padding-left:1em;">{{ def['term'] }}</h3>
+        <h4 style="padding-left:2em;"><i>{{ def['dictionary'] }}</i></h4>
+        <p style="padding-left:3em;">
+        % for line in def['definition']
+          {{ line }}<br>
+        % endfor
+        </p>
+      % endfor
+      <p></p>
+    </div>
+    % endif
   </body>
 </html>
