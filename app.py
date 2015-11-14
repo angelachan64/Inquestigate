@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from apis import dictionary, nytimes
-import urllib2, json
+import urllib2, json, os.path
 
 app = Flask(__name__)
 app.jinja_env.line_statement_prefix = '%'
@@ -18,4 +18,6 @@ def backfrip_debug():
 if __name__=="__main__":
     app.debug = True
     app.secret_key = "p0NZLhPzCbjSJxxo"
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0',
+        port=(8080 if os.path.isfile('cloudy') else 8000)
+    )
