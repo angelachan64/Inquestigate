@@ -8,6 +8,10 @@ app.jinja_env.line_statement_prefix = '%'
 @app.route('/')
 def index():
     return render_template("home.html");
+    
+@app.route('/about/')
+def about():
+    return render_template("about.html");
 
 @app.route('/debug/', methods=["GET"])
 def backfrip_debug():
