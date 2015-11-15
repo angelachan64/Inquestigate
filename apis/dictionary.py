@@ -1,5 +1,5 @@
 from xml.etree import ElementTree
-import urllib2, warnings
+import urllib2, urllib, warnings
 
 warnings.filterwarnings("ignore",
     message="The behavior of this method will change in future versions.")
@@ -11,7 +11,7 @@ def query(term):
         urllib2.urlopen(
             urllib2.Request(
                 "http://services.aonaware.com/DictService/DictService.asmx/Define?word={}".format(
-                    term.split(" ")[0]
+                    urllib.quote(term.encode('utf8'))
                 ))).read())
     return format_response(response)
 
