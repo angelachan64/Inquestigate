@@ -11,7 +11,7 @@ def query(term):
         urllib2.urlopen(
             urllib2.Request(
                 "http://services.aonaware.com/DictService/DictService.asmx/Define?word={}".format(
-                    term.lower()
+                    term.split(" ")[0]
                 ))).read())
     return format_response(response)
 
