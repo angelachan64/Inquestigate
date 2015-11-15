@@ -5,7 +5,7 @@ import urllib2, json, os.path
 app = Flask(__name__)
 app.jinja_env.line_statement_prefix = '%'
 
-@app.route('/')
+@app.route('/', methods=["GET"])
 def index():
     search = request.args.get('search')
     defs = dictionary.query(search)

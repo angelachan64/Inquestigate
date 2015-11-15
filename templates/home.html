@@ -4,30 +4,27 @@
 
 {% block contents %}
 
-<div class="intro-text">
-  <span style="font-size:50px; line-height:200%;">For all your whims and fancies.</span><br>
-</div>
-    <div id="search">
-
-      <form action="" method="GET">
-
-          <input type="search" name="search" value="Enter ONE keyword" 
-              onBlur="if(this.value=='')this.value='Enter ONE keyword'" 
-              onFocus="if(this.value=='Enter ONE keyword')this.value='' " 
-              {% if search %}value="{{ search }}"{% else %}autofocus{% endif %}>
-          <input type="submit" value="Search" class="button">
-
-      </form>
-
-    </div>
-<form action="" method="GET">
-  <input type="search" name="search" placeholder="Search"
-    {% if search %}value="{{ search }}"{% else %}autofocus{% endif %}>
-  <input type="submit" value="Search">
-</form>
+<div class="home">
+  <div class= "intro-panel">
+  <div class="intro-text">
+    <br><br>
+    <div class="cssload-loader">Inquestigate</div>
+    <br><br><br>
+    <span style="font-size:25px; line-height:200%;">for all your whims and fancies...</span>
+  </div>
+  <div id="search">
+    <form action="" method="GET">
+      <input type="search" name="search" size=55 placeholder="Enter ONE keyword" 
+          onBlur="if(this.value=='')this.value='Enter ONE keyword'" 
+          onFocus="if(this.value=='Enter ONE keyword')this.value='' " 
+          {% if search %}value="{{ search }}"{% else %}autofocus{% endif %}>
+      <input type="submit" value="Search" class="button">
+    </form>
+  </div>
+  </div>
 
 % if defs['definitions']
-<div>
+<div class="definition">
   <h1>Definitions for '{{ defs['term'] }}'</h1>
   {# % for def in defs['definitions']
     <h3 style="padding-left:1em;">{{ def['term'] }}</h3>
@@ -51,10 +48,8 @@
 % endif
 
 % if posts['response']
-<div>
-  {% if search != None %}
+<div class="tumblr">
   <h1>Tumblr posts tagged with '{{ search }}'</h1>
-  {% endif %}
   % for post in posts['response']
     <div style="padding-left:1em;">
     % if post.get('photos')
@@ -69,5 +64,5 @@
   % endfor
 </div>
 % endif
-
+</div>
 {% endblock %}
