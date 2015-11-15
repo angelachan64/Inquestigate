@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session, redirect, url_for
-from apis import dictionary, nytimes
+from apis import dictionary, nytimes, tumblr
 import urllib2, json, os.path
 
 app = Flask(__name__)
@@ -7,7 +7,15 @@ app.jinja_env.line_statement_prefix = '%'
 
 @app.route('/')
 def index():
-    return render_template("home.html");
+    search = request.args.get('search')
+    defs = dictionary.query(search)
+    posts = tumblr.tagged_posts(search)
+    return render_template(
+        "home.html",
+        search=search,
+        defs=defs,
+        posts=posts,
+    )
     
 @app.route('/about/')
 def about():
@@ -17,7 +25,13 @@ def about():
 def backfrip_debug():
     search = request.args.get('search')
     defs = dictionary.query(search)
-    return render_template("debug.html", search=search, defs=defs)
+    posts = tumblr.tagged_posts(search)
+    return render_template(
+        "debug.html",
+        search=search,
+        defs=defs,
+        posts=posts
+    )
 
 if __name__=="__main__":
     app.debug = True

@@ -3,13 +3,71 @@
 {% block title %}Inquestigate{% endblock %}
 
 {% block contents %}
-<header>
-  <div class="container">
-    <div class="intro-text">
-      <h1>Welcome To Our Studio!<h1>
-      <h2>It's Nice To Meet You</h2>
-      <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+
+<div class="intro-text">
+  <span style="font-size:50px; line-height:200%;">For all your whims and fancies.</span><br>
+</div>
+    <div id="search">
+
+      <form action="" method="GET">
+
+          <input type="search" name="search" value="Enter ONE keyword" 
+              onBlur="if(this.value=='')this.value='Enter ONE keyword'" 
+              onFocus="if(this.value=='Enter ONE keyword')this.value='' " 
+              {% if search %}value="{{ search }}"{% else %}autofocus{% endif %}>
+          <input type="submit" value="Search" class="button">
+
+      </form>
+
     </div>
-  </div>
-</header>
+<form action="" method="GET">
+  <input type="search" name="search" placeholder="Search"
+    {% if search %}value="{{ search }}"{% else %}autofocus{% endif %}>
+  <input type="submit" value="Search">
+</form>
+
+% if defs['definitions']
+<div>
+  <h1>Definitions for '{{ defs['term'] }}'</h1>
+  {# % for def in defs['definitions']
+    <h3 style="padding-left:1em;">{{ def['term'] }}</h3>
+    <h4 style="padding-left:2em;"><i>{{ def['dictionary'] }}</i></h4>
+    <p style="padding-left:3em;">
+    % for line in def['definition']
+      {{ line }}<br>
+    % endfor
+    </p>
+  % endfor #}
+  <!-- Shortened definition lister, for debuggin', efficiency, and laziness reasons -->
+  <h3 style="padding-left:1em;">{{ defs[defs.keys()[0]][0]['term'] }}</h3>
+  <h4 style="padding-left:2em;"><i>{{ defs[defs.keys()[0]][0]['dictionary'] }}</i></h4>
+  <p style="padding-left:3em;">
+    % for line in range(5)
+      {{ defs[defs.keys()[0]][0]['definition'][line] }}<br>
+    % endfor
+    <em>[ . . . ]</em>
+  </p>
+</div>
+% endif
+
+% if posts['response']
+<div>
+  {% if search != None %}
+  <h1>Tumblr posts tagged with '{{ search }}'</h1>
+  {% endif %}
+  % for post in posts['response']
+    <div style="padding-left:1em;">
+    % if post.get('photos')
+      <h3><em>{{ post['date'] }}</em> via {{ post['blog_name'] }}</h3>
+      % for photo in post['photos']
+        <img src="{{ photo['original_size']['url'] }}"
+          style="width:50%;margin-bottom:1em;">
+      % endfor
+      <p style="font-size:larger;">{{ post['caption']|safe }}</p>
+    % endif
+    </div>
+  % endfor
+</div>
+% endif
+
 {% endblock %}

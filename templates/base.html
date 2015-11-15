@@ -33,8 +33,8 @@
 	        aria-expanded="false" aria-controls="navbar">
 	        <span class="sr-only">Toggle Navigation</span>
 	      </button>
-        <a class="navbar-brand" href="#">Inquestigate</a>
-        <a class="pull-left" href="#">
+        <a class="navbar-brand" href="/">Inquestigate</a>
+        <a class="pull-left" href="/">
           <img alt="Inquestigate"
             src="{{ url_for('static', filename='maglogo.gif') }}"
             height=50px>
@@ -43,6 +43,21 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="hidden"><a href="#page-top"></a></li>
+          <li><a href="/">
+            <img alt="Images"
+            src="{{ url_for('static', filename='camera.png') }}"
+            height=25px>
+          </a></li>
+          <li><a href="/">
+            <img alt="News Articles"
+            src="{{ url_for('static', filename='newspaper.gif') }}"
+            height=25px>
+          </a></li>
+          <li><a href="/">
+            <img alt="Trivia"
+            src="{{ url_for('static', filename='lightbulb.png') }}"
+            height=25px>
+          </a></li>
           <li><a href="/about">About</a></li>
         </ul>
       </div><!-- /.nav-collapse -->

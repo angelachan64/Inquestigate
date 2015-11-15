@@ -16,7 +16,7 @@
         background-color: rgb(240, 240, 240);
       }
       h1, h2, h3, h4, h5, h6 {
-        line-height: 0;
+        line-height: 100%;
       }
       .center {
         text-align: center;
@@ -32,10 +32,10 @@
         <input type="submit" value="Search">
       </form>
     </div>
-    % if defs
+    % if defs['definitions']
     <div>
       <h1>Definitions for '{{ defs['term'] }}'</h1>
-      % for def in defs['definitions']
+      {# % for def in defs['definitions']
         <h3 style="padding-left:1em;">{{ def['term'] }}</h3>
         <h4 style="padding-left:2em;"><i>{{ def['dictionary'] }}</i></h4>
         <p style="padding-left:3em;">
@@ -43,8 +43,30 @@
           {{ line }}<br>
         % endfor
         </p>
+      % endfor #}
+      <!-- Shortened definition lister, for debuggin', efficiency, and laziness reasons -->
+      <h3 style="padding-left:1em;">{{ defs[defs.keys()[0]][0]['term'] }}</h3>
+      <h4 style="padding-left:2em;"><i>{{ defs[defs.keys()[0]][0]['dictionary'] }}</i></h4>
+      <p style="padding-left:3em;">
+      % for line in range(5)
+        {{ defs[defs.keys()[0]][0]['definition'][line] }}<br>
       % endfor
-      <p></p>
+      <em>[ . . . ]</em>
+      </p>
+    </div>
+    % endif
+    % if posts
+    <div>
+      <h1>Tumblr posts tagged with '{{ search }}'</h1>
+      % for post in posts['response']
+        % if post.get('photos')
+          <h3><em>{{ post['date'] }}</em> via {{ post['blog_name'] }}</h3>
+          % for photo in post['photos']
+            <img src="{{ photo['original_size']['url'] }}"
+            style="width:50%;">
+          % endfor
+        % endif
+      % endfor
     </div>
     % endif
   </body>
