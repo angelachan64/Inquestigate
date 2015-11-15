@@ -5,28 +5,26 @@
 {% block contents %}
 
 <div class="home">
-  <div class= "intro-panel">
+  <div class="intro">
   <div class="intro-text">
-    <br><br>
-    <div class="cssload-loader">Inquestigate</div>
+    <div class="cssload-loader image-responsive">Inquestigate</div>
     <br><br><br>
-    <span style="font-size:25px; line-height:200%;">for all your whims and fancies...</span>
+    <span style="font-size:25px; line-height:200%; color: black;">for all your whims and fancies...</span>
   </div>
   <div id="search">
     <form action="" method="GET">
-      <input type="search" name="search" size=55 placeholder="Enter ONE keyword" 
-          onBlur="if(this.value=='')this.value='Enter ONE keyword'" 
-          onFocus="if(this.value=='Enter ONE keyword')this.value='' " 
-          {% if search %}value="{{ search }}"{% else %}autofocus{% endif %}>
+      <input type="search" name="search" size=55 placeholder="Search"
+        {% if search %}value="{{ search }}"{% else %}autofocus{% endif %}>
       <input type="submit" value="Search" class="button">
     </form>
   </div>
-  </div>
+</div>
+
 
 % if defs['definitions']
-<div class="definition">
+<div class="definition" id="full">
   <h1>Definitions for '{{ defs['term'] }}'</h1>
-  {# % for def in defs['definitions']
+  % for def in defs['definitions']
     <h3 style="padding-left:1em;">{{ def['term'] }}</h3>
     <h4 style="padding-left:2em;"><i>{{ def['dictionary'] }}</i></h4>
     <p style="padding-left:3em;">
@@ -34,29 +32,22 @@
       {{ line }}<br>
     % endfor
     </p>
-  % endfor #}
-  <!-- Shortened definition lister, for debuggin', efficiency, and laziness reasons -->
-  <h3 style="padding-left:1em;">{{ defs[defs.keys()[0]][0]['term'] }}</h3>
-  <h4 style="padding-left:2em;"><i>{{ defs[defs.keys()[0]][0]['dictionary'] }}</i></h4>
-  <p style="padding-left:3em;">
-    % for line in range(5)
-      {{ defs[defs.keys()[0]][0]['definition'][line] }}<br>
-    % endfor
-    <em>[ . . . ]</em>
-  </p>
+  % endfor
 </div>
 % endif
 
 % if posts['response']
-<div class="tumblr">
+<div class="tumblr" id="pictures">
   <h1>Tumblr posts tagged with '{{ search }}'</h1>
   % for post in posts['response']
     <div style="padding-left:1em;">
     % if post.get('photos')
-      <h3><em>{{ post['date'] }}</em> via {{ post['blog_name'] }}</h3>
+      <h3><em>{{ post['date'] }}</em> via <a href="http://{{ post['blog_name'] }}.tumblr.com">{{ post['blog_name'] }}</a></h3>
       % for photo in post['photos']
-        <img src="{{ photo['original_size']['url'] }}"
-          style="width:50%;margin-bottom:1em;">
+        <a href="{{ post['short_url'] }}">
+          <img src="{{ photo['original_size']['url'] }}"
+            style="width:50%;margin-bottom:1em;">
+        </a>
       % endfor
       <p style="font-size:larger;">{{ post['caption']|safe }}</p>
     % endif

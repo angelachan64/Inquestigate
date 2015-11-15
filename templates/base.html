@@ -43,7 +43,13 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="hidden"><a href="#page-top"></a></li>
-          <li><a href="/">
+          <li>
+            <a href="#full">
+            <img alt="Definitions"
+            src="{{ url_for('static', filename='dictionary.png') }}"
+            height=25px>
+          </a></li>
+          <li><a href="#pictures">
             <img alt="Images"
             src="{{ url_for('static', filename='camera.png') }}"
             height=25px>
@@ -58,13 +64,18 @@
             src="{{ url_for('static', filename='lightbulb.png') }}"
             height=25px>
           </a></li>
+          <li><a href="#top">
+            <img alt="Top"
+            src="{{ url_for('static', filename='up-caret.png') }}"
+            height=25px>
+          </a></li>
           <li><a href="/about">About</a></li>
         </ul>
       </div><!-- /.nav-collapse -->
     </div>
   </nav>
     
-  <div class="container">
+  <div class="container" id="top">
     {% block contents %}{% endblock %}
   </div><!-- /.container -->
   
