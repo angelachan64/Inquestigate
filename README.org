@@ -1,6 +1,6 @@
 * Inquestigate
 A search engine for all your whims and fancies.
-|    The Team    | Roles              |
+|    The Team    | Role               |
 |----------------|--------------------|
 | Angela Chan    | Leader             |
 | Amanda Chiu    | User Experience    |
@@ -9,3 +9,7 @@ A search engine for all your whims and fancies.
 ** What APIs did we use?
 - Tumblr API
 - New York Times API
+-----
+** What is Inquestigate?
+Inquestigate is where you go to find out about all your whims and fancies! 
+Inquestigate was created as a mini project for a school assignment. It is a multipurpose search engine that allows you to filter your results based on whether you want images, news articles, trivia, and maybe even more in the future! This was created using several APIs and a whole lot of hard work and love. Venture on, my fellow inquestigators!
