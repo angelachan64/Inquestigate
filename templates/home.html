@@ -92,8 +92,9 @@
   % endif
   % if articles['docs']
   <div class="news" id="news">
-      <h1>News Articles about {{ search }}</h1>
+      <h1>News Articles about '{{ search }}'</h1>
     % for art in range(articles['docs']|length)
+    <br>
       <a href="{{ articles['docs'][art]['web_url'] }}">
         <h2>{{  articles['docs'][art]['headline']['main'] }}</h2>
       </a>
