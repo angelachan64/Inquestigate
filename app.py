@@ -23,6 +23,7 @@ def index():
 def about():
     return render_template("about.html");
 
+# NO LONGER IN USE
 @app.route('/debug/', methods=["GET"])
 def backfrip_debug():
     search = request.args.get('search')
@@ -35,6 +36,7 @@ def backfrip_debug():
         defs=defs,
         posts=posts
     )
+# END NO LONGER IN USE
 
 if __name__=="__main__":
     app.debug = True
