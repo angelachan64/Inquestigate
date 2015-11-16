@@ -12,4 +12,18 @@ A search engine for all your whims and fancies.
 -----
 ** What is Inquestigate?
 Inquestigate is where you go to find out about all your whims and fancies! 
-Inquestigate was created as a mini project for a school assignment. It is a multipurpose search engine that allows you to filter your results based on whether you want images, news articles, trivia, and maybe even more in the future! This was created using several APIs and a whole lot of hard work and love. Venture on, my fellow inquestigators!
+Inquestigate was created as a mini project for a school assignment.
+It is a multipurpose search engine that allows you to filter your results based on whether you want
+images, news articles, trivia, and maybe even more in the future! This was created using several
+APIs and a whole lot of hard work and love. Venture on, my fellow inquestigators!
+-----
+*** To Do:
+- +Make base.html+
+- +Make an about page+
+- +Make the home page+
+- +Create working search function+
+- +Implement using a dictionary API+
+- +Implement using Tumblr API+
+- Implement using YouTube API
+- Implement using New York Times API
+- Implement using a trivia API
