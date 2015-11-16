@@ -10,11 +10,13 @@ def index():
     search = request.args.get('search')
     defs = dictionary.query(search)
     posts = tumblr.tagged_posts(search)
+    articles = nytimes.article_search(search)
     return render_template(
         "home.html",
         search=search,
         defs=defs,
         posts=posts,
+        articles=articles
     )
     
 @app.route('/about/')
@@ -26,6 +28,7 @@ def backfrip_debug():
     search = request.args.get('search')
     defs = dictionary.query(search)
     posts = tumblr.tagged_posts(search)
+    articles = nytimes.article_search(search)
     return render_template(
         "debug.html",
         search=search,

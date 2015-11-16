@@ -25,5 +25,5 @@ APIs and a whole lot of hard work and love. Venture on, my fellow inquestigators
 - +Implement using a dictionary API+
 - +Implement using Tumblr API+
 - Implement using YouTube API
-- Implement using New York Times API
+- +Implement using New York Times API+
 - Implement using a trivia API

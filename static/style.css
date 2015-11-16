@@ -140,7 +140,7 @@ input {
 }
 
 
-/*--VIDEOS--*/
+/*--VIDEOS
 
 .video {
 	left: 0;
@@ -150,25 +150,31 @@ input {
 	margin: 0 auto;
 	background-color: #03c9a9;
 }
-
+--*/
 
 /*--NEWS ARTICLES--*/
 
 .news {
+	padding-left:50px;
+	padding-right:50px;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background-color: #CCE0D4;
 }
-
-
-/*--TRIVIA--*/
+.pre-design {
+	line-height:200%;
+	border:none;
+	display: inline;
+	background-color: #CCE0D4;
+}
+/*--TRIVIA
 
 .trivia {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background-color: #f39c12;
 }
-
+--*/
 
 /*--INQUESTIGATE HEADER--*/
 
@@ -344,4 +350,11 @@ input {
     background: -o-linear-gradient(right, rgba(255,255,255,0.5), #f2784b,#f2784b, rgba(255,255,255,0.5)); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, rgba(255,255,255,0.5), #f2784b,#f2784b, rgba(255,255,255,0.5)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right, rgba(0,0,0,0.5), #f2784b,#f2784b, rgba(0,0,0,0.5)); /* Standard syntax (must be last) */
+}
+
+.pre-design {
+	width: 80%;
+	margin: 0 auto;
+	height: 20vh;
+	background-color: WHITE;
 }
