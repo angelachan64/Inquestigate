@@ -1,10 +1,10 @@
 * Inquestigate
 A search engine for all your whims and fancies.
-|    The Team    |
-|----------------|
-| Angela Chan    |
-| Amanda Chiu    |
-| Eric Stringham |
+|    The Team    | Roles              |
+|----------------|--------------------|
+| Angela Chan    | Leader             |
+| Amanda Chiu    | User Experience    |
+| Eric Stringham | Backend/ Middleware|
 -----
 ** What APIs did we use?
 - Tumblr API

@@ -25,6 +25,7 @@
 
 <body>
   
+  <!--NAVBAR-->
   <nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix">
     <div class="container">
 	    <div class="navbar-header">
@@ -44,6 +45,8 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="hidden"><a href="#page-top"></a></li>
           <li>
+            
+            <!--JUMP TO SECTION/CIRCLE LOGOS-->
             <a href="#full">
             <img alt="Definitions"
             src="{{ url_for('static', filename='dictionary.png') }}"
@@ -52,6 +55,11 @@
           <li><a href="#pictures">
             <img alt="Images"
             src="{{ url_for('static', filename='camera.png') }}"
+            height=25px>
+          </a></li>
+          <li><a href="/">
+            <img alt="Videos"
+            src="{{ url_for('static', filename='video.png') }}"
             height=25px>
           </a></li>
           <li><a href="/">
@@ -82,8 +90,17 @@
   <!-- Bootstrap Core JavaScript -->
   <!-- (End of doc for faster page loads) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootsrap/3.3.5/js/bootstrap.min.js"></script>
-  <img src="../static/mascot.gif" class="footer">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+  <script language="JavaScript" type="text/javascript">
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 2000
+    })
+  });    
+</script>
+  <img src="{{ url_for('static', filename='mascot.gif') }}" class="footer">
 </body>
 
 </html>

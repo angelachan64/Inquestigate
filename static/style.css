@@ -1,146 +1,177 @@
-html, body {
-  margin:0;
-  padding:0;
-  left:0; right:0;
-  height:100%; 
-  width:100%;
-  max-width: none;
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  text-align: center;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	max-width: none;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	text-align: center;
 }
 
 .intro {
-  padding-top:250px;
-  padding-bottom:125px;
+	padding-top: 250px;
+	padding-bottom: 125px;
 }
 
 input {
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: 1.5em;
-  margin: 0;
-  outline: none;
-  padding: 0;
-  -webkit-appearance: none;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: 1.5em;
+	margin: 0;
+	outline: none;
+	padding: 0;
+	-webkit-appearance: none;
 }
 
 .clearfix {
-  *zoom: 1;
+	*zoom: 1;
 }
 
 .clearfix:before,
 .clearfix:after {
-  content: "";
-  display: table;
+	content: "";
+	display: table;
 }
 
 .clearfix:after {
-  clear: both;
+	clear: both;
 }
 
 ::-webkit-input-placeholder {
-    color: #C9C9C9;
-    opacity: 0.4 !important; /* for chrome */
+	color: #C9C9C9;
+	opacity: 0.4 !important;
+	/* for chrome */
 }
 
-:-moz-placeholder { /* Firefox 18- */
-    color: #C9C9C9;
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: #C9C9C9;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-    color: #C9C9C9;
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #C9C9C9;
 }
 
-:-ms-input-placeholder {  
-   color: #C9C9C9;
+:-ms-input-placeholder {
+	color: #C9C9C9;
 }
+
 
 /* ---------- SEARCH ---------- */
 
 #search {
-  background: #42454e;
-  border-radius: 3px;
-  display: inline-block;
-  padding: 7px;
+	background: #42454e;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 7px;
 }
 
 #search input {
-  float: left;
+	float: left;
 }
 
 #search input[type="search"],
 #search input[type="submit"] {
-  border-radius: 3px;
-  font-size: 15px;
+	border-radius: 3px;
+	font-size: 15px;
 }
 
 #search input[type="search"] {
-  background: #fff;
-  color: #42454e;
-  min-width: 200px;
-  padding: 6px 8px;
+	background: #fff;
+	color: #42454e;
+	min-width: 200px;
+	padding: 6px 8px;
 }
 
 #search input[type="submit"] {
-  background: #1bba9a;
-  color: #fff;
-  font-weight: bold;
-  margin-left: 7px;
-  padding: 6px 10px;
+	background: #1bba9a;
+	color: #fff;
+	font-weight: bold;
+	margin-left: 7px;
+	padding: 6px 10px;
 }
 
 #search input[type="submit"]:hover {
-  background: #189e83;
+	background: #189e83;
 }
 
 #search input[type="search"]::-webkit-input-placeholder {
-  color: #42454e;
+	color: #42454e;
 }
 
-#search input[type="search"]:-moz-placeholder {color: #42454e;}
+#search input[type="search"]:-moz-placeholder {
+	color: #42454e;
+}
 
-#search input[type="search"]:-ms-input-placeholder {color: #42454e;}
+#search input[type="search"]:-ms-input-placeholder {
+	color: #42454e;
+}
+
 
 /*--END SEARCH BAR--*/
 
-/*--DEFINITIONS--*/
-.definition {
-  left:0;
-  position:absolute;
-  width:100%;
-  margin:0 auto;
-  padding:50px 0 50px;
-  background-color: #c5eff7;
-}
-/*--TUMBLR--*/
-.tumblr {
-  left:0;
-  padding-left:50px;
-  padding-right:50px;
-  position:absolute;
-  width: 100%;
-  margin:0 auto;
-  padding:50px 0 50px;
-  background-color: #f2784b;
 
+/*--DEFINITIONS--*/
+
+.definition {
+	left: 0;
+	position: relative;
+	padding: 50px 0 50px;
+	width: 100%;
+	min-height: 100vh;
+	margin: 0 auto;
+	background-color: #c5eff7;
 }
+
+
+/*--TUMBLR--*/
+
+.tumblr {
+	left: 0;
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	padding: 50px 0 50px;
+	background-color: #f2784b;
+}
+
+
+/*--VIDEOS--*/
+
+.video {
+	left: 0;
+	position: relative;
+	padding: 50px 0 50px;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #03c9a9;
+}
+
 
 /*--NEWS ARTICLES--*/
+
 .news {
-  padding-top:50px;
-  padding-bottom:50px;
-  background-color: #CCE0D4;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #CCE0D4;
 }
+
 
 /*--TRIVIA--*/
+
 .trivia {
-  padding-top:50px;
-  padding-bottom:50px;
-  background-color: #f39c12;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #f39c12;
 }
 
+
 /*--INQUESTIGATE HEADER--*/
+
 .cssload-loader {
 	width: 656px;
 	height: 131px;
@@ -149,38 +180,40 @@ input {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, -50%);
-		-o-transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		-webkit-transform: translate(-50%, -50%);
-		-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size:47px;
-	color: rgb(0,0,0);
+	font-size: 47px;
+	color: rgb(0, 0, 0);
 	letter-spacing: 0.2em;
 }
-.cssload-loader::before, .cssload-loader::after {
+
+.cssload-loader::before,
+.cssload-loader::after {
 	content: "";
 	display: block;
 	width: 39px;
 	height: 39px;
-	background: rgba(39,174,96,0.63);
+	background: rgba(39, 174, 96, 0.63);
 	position: absolute;
 	animation: cssload-load 1.12s infinite alternate ease-in-out;
-		-o-animation: cssload-load 1.12s infinite alternate ease-in-out;
-		-ms-animation: cssload-load 1.12s infinite alternate ease-in-out;
-		-webkit-animation: cssload-load 1.12s infinite alternate ease-in-out;
-		-moz-animation: cssload-load 1.12s infinite alternate ease-in-out;
+	-o-animation: cssload-load 1.12s infinite alternate ease-in-out;
+	-ms-animation: cssload-load 1.12s infinite alternate ease-in-out;
+	-webkit-animation: cssload-load 1.12s infinite alternate ease-in-out;
+	-moz-animation: cssload-load 1.12s infinite alternate ease-in-out;
 }
+
 .cssload-loader::before {
 	top: 0;
 }
+
 .cssload-loader::after {
 	bottom: 0;
 }
-
-
 
 @keyframes cssload-load {
 	0% {
@@ -267,12 +300,48 @@ input {
 	}
 }
 
-
 .footer {
-    position: fixed;
-    right:0;
-    bottom:0;
-    margin:0;
-    padding:0;
-    width:15%;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	width: 15%;
+}
+
+.carousel {
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+/* MAKES BACKGROUND WHITE + CENTERS INNER SLIDE THING ?? */
+
+.carousel-inner {
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 0 auto;
+	height: 75vh;
+	padding: 2.5vh;
+}
+
+
+/* CENTERS IMAGE */
+
+.carousel-inner > .item > img {
+	margin: 0 auto;
+	height: 70vh;
+}
+
+.carousel-inner > .item > a {
+	margin: 0 auto;
+	height: 70vh;
+}
+
+
+/* GRADIENT */
+#grad1 {
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0.5), #f2784b,#f2784b, rgba(255,255,255,0.5)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(255,255,255,0.5), #f2784b,#f2784b, rgba(255,255,255,0.5)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(255,255,255,0.5), #f2784b,#f2784b, rgba(255,255,255,0.5)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(0,0,0,0.5), #f2784b,#f2784b, rgba(0,0,0,0.5)); /* Standard syntax (must be last) */
 }
